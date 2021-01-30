@@ -1,0 +1,20 @@
+A small app for uploading files via HTTP.
+-----------------------------------------
+
+$ curl -F 'data=@main.go' localhost:8080
+
+$ basket
+2021/01/30 15:12:50 listening on :8080
+2021/01/30 15:12:53 storing main.go (1741 bytes)
+
+$ ls uploads/
+main.go
+
+$ basket -help
+Usage of ./basket:
+  -listen string
+        host and port to bind http server to (default ":8080")
+  -max-upload-size int
+        maximum file size (default 10485760)
+  -upload-dir string
+        path to local uploads directory (default "uploads")
